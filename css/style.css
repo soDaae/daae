@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+section.gallery {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(49, 64, 105);
+    display: flex;
+}
+
+.gallery-header {
+    width: 20vw;
+    height: 100%;
+    padding: 19vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+}
+
+.gallery-header h2 {
+    color: #fff;
+    text-align: center;
+}
+
+.gallery-header h2 i {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.gallery-header p {
+    color: #aaa;
+    text-align: center;
+}
+
+.gallery-collection {
+    display: flex;
+    width: 80vw;
+    height: 100%;
+    padding-top: 15vh;
+}
+
+.gallery-collection li {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    padding: 70px 40px 100px;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all .5s;
+    position: relative;
+}
+
+.gallery-collection li:hover {
+    flex: 1.5 1;
+    opacity: 1;
+}
+
+.gallery-collection li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -200px;
+    width: 80%;
+    height: 95%;
+    background-color: rgb(110, 131, 197);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.gallery-collection li:hover::before {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-collection li .inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    z-index: 9;
+}
+
+
+.gallery-collection li .inner .txt {
+    width: 100%;
+}
+
+.gallery-collection li:hover .inner .txt {
+    width: 75%;
+}
+
+.gallery-collection li .inner .txt h3 {
+    font-size: 2rem;
+    color: #fff;
+    padding-top: 70px;
+    margin-bottom: 40px;
+    transition: all .5s;
+}
+
+.gallery-collection li .inner .txt h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #777;
+    margin-top: 20px;
+    transition: all 1s;
+}
+
+.gallery-collection li:hover .inner .txt h3 {
+    font-size: 5vw;
+    padding-top: 0;
+}
+
+.gallery-collection li:hover .inner .txt h3::after {
+    background-color: yellow;
+    width: 120px;
+}
+
+.gallery-collection li .inner .txt p {
+    color: #fff;
+}
+
+.gallery-collection li .inner figure {
+    width: 100%;
+    height: 30%;
+}
+
+.gallery-collection li .inner figure video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup {
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100vh;
+    padding: 20vh 7vw 14vh 20vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    transition: all .5s;
+}
+
+.popup.on {
+    left: 0;
+}
+
+.popup .txt {
+    flex: 0 1 25%;
+    height: 100%;
+}
+
+.popup .txt h2 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.popup .txt p {
+    font-size: 2rem;
+    margin-bottom: 60px;
+    color: #777;
+}
+
+.popup .txt button {
+    color: yellow;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.popup .txt button:hover {
+    color: #fff;
+    text-shadow: 0 0 20px yellow;
+}
+
+.popup figure {
+    flex: 0 1 70%;
+    height: 100%;
+}
+
+.popup figure video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
